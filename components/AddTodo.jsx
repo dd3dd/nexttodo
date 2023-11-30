@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 export default function AddTodo() {
+    const router = useRouter();
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name) {
-            alert("Title and Content are required.");
+            alert("name is required.");
             return;
         }
         try {
@@ -20,9 +22,11 @@ export default function AddTodo() {
             });
 
             if (res.ok) {
-                console.log(res.json())
+                setName('');
+                setDescription('');
+                router.refresh();
             } else {
-                throw new Error("Failed to create a topic");
+                throw new Error("Failed to create a task");
             }
         } catch (error) {
             console.log(error);
