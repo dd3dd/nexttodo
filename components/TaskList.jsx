@@ -1,3 +1,4 @@
+import CheckComplete from "./CheckComplete";
 import Task from "./Task";
 
 const show = async () => {
@@ -17,9 +18,9 @@ const show = async () => {
 export default async function TaskList() {
     const getData = await show();
     const taskData = getData.data;
-    // console.log(taskData)
     return (
-        <div className="mt-12">
+        <div className="mt-4">
+            <CheckComplete />
             {taskData.map(e =>
                 <Task key={e.id} id={e.id} name={e.name} description={e.description} is_completed={e.is_completed}
                 />
