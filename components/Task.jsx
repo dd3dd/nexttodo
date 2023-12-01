@@ -12,7 +12,6 @@ export default function Task({ id = 0, name = '', description = '', is_completed
     const [isEdit, setIsEdit] = useState(false);
     const { newName, setNewName } = useContext(Context);
     const { newDescription, setNewDescription } = useContext(Context);
-    let newUpdated_at = new Date(updated_at);
     const router = useRouter();
     const handleDelete = async () => {
         const confirmed = confirm("確定要刪除?");
@@ -144,7 +143,7 @@ export default function Task({ id = 0, name = '', description = '', is_completed
                         }
                         <div className='flex'>
                             <p>更新時間 : </p>
-                            <p className='ml-1'>{newUpdated_at.toLocaleString()}</p>
+                            <p className='ml-1'>{new Date(updated_at).toLocaleString()}</p>
                         </div>
                     </div>
                     <div>
