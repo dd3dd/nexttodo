@@ -1,3 +1,20 @@
+## 功能說明
+
+最上方可以輸入任務名稱及描述並新增(名稱必填，描述可不填)
+
+任務列表顯示目前所有任務，每個任務都有標示未完成或已完成(剛新增是未完成)
+
+使用"顯示已完成的Task"按鈕，決定要不要顯示已完成的任務(預設是會顯示已完成的任務)
+
+點擊任務名稱旁邊的checkbox，可以切換任務是否完成的狀態。
+
+每個任務右邊有編輯和刪除功能，點擊編輯後可以按X的按鈕來取消編輯。
+
+改變任務狀態和編輯任務名稱及描述，都會更新updated_time。
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
