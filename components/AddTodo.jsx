@@ -6,7 +6,7 @@ export default function AddTodo() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name) {
-            alert("name is required.");
+            alert("任務名稱不能為空");
             return;
         }
         try {
@@ -20,14 +20,12 @@ export default function AddTodo() {
                     "description": description
                 }),
             });
-
-            if (res.ok) {
-                setName('');
-                setDescription('');
-                router.refresh();
-            } else {
+            if (!res.ok) {
                 throw new Error("Failed to create a task");
             }
+            setName('');
+            setDescription('');
+            router.refresh();
         } catch (error) {
             console.log(error);
         }
@@ -35,7 +33,7 @@ export default function AddTodo() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit} className="sticky top-0 flex flex-col gap-3 bg-white">
             <input
                 maxLength={10}
                 onChange={e => setName(e.target.value)}

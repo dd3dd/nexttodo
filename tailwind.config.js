@@ -14,7 +14,8 @@ module.exports = {
       },
       maxWidth: {
         'descriptionWidth': '200px',
-      }
+        'editInputWidth': '250px',
+      },
     },
   },
   plugins: [],

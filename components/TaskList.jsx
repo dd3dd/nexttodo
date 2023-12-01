@@ -6,7 +6,6 @@ const show = async () => {
         const res = await fetch('https://wayi.league-funny.com/api/task', {
             cache: "no-store",
         });
-
         if (!res.ok) {
             throw new Error("Failed to fetch task");
         }
@@ -23,6 +22,7 @@ export default async function TaskList() {
             <CheckComplete />
             {taskData.map(e =>
                 <Task key={e.id} id={e.id} name={e.name} description={e.description} is_completed={e.is_completed}
+                    updated_at={e.updated_at}
                 />
             )}
         </div>
